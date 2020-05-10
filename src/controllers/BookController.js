@@ -20,6 +20,8 @@ module.exports = {
 
   async index(req, res) {
     const books = await Book.find().sort({ _id: "desc", author: -1 }).limit(5);
-    return res.json(books);
+    const cont = await Book.count();
+
+    return res.json({ data: books, cont: cont });
   },
 };
