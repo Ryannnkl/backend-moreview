@@ -3,7 +3,7 @@ const Book = require("../models/Book");
 module.exports = {
   async store(req, res) {
     const { title, snopses, subtitle, author, generes } = req.body;
-    const { filename } = req.file;
+    const { key, location: url = "" } = req.file;
 
     const book = await Book.create({
       title,
@@ -11,7 +11,8 @@ module.exports = {
       snopses,
       author,
       generes: generes.split(",").map((genere) => genere.trim()),
-      book_img: filename,
+      book_img: key,
+      book_url: url,
     });
 
     return res.json(book);
