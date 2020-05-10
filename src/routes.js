@@ -11,7 +11,7 @@ const routes = express.Router();
 const upload = multer(uploadConfig);
 
 routes.get("/", (req, res) => {
-  return res.send("<h1>ola</h1>");
+  return res.send("<h1>Alisson vc é um cachorro</h1>");
 });
 
 routes.post("/session", SessionController.store);
