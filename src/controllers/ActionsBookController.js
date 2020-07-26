@@ -1,5 +1,5 @@
 const Book = require("../models/Book");
-const Calc = require("./utils/Calculate");
+const Calc = require("./utils/CalculateNote");
 
 module.exports = {
   async setNote(req, res) {
